@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Host Grotesk", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.p {
+  padding: 0 2vw;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav .logo h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1.5rem;
+}
+
+nav .logo img {
+  height: 50px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav ul li {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #575757;
+  position: relative;
+  transition: all 0.2s linear;
+}
+
+nav ul li::after {
+  content: "";
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: -5px;
+  width: 0%;
+  height: 1.2px;
+  background-color: #000000;
+  border-radius: 5%;
+  transition: all 0.2s linear;
+}
+
+nav ul li:hover {
+  cursor: pointer;
+  color: #333333;
+}
+nav ul li:hover::after {
+  width: 110%;
+}
+
+nav button,
+.btn {
+  color: #000102;
+  background-color: #e8ba2e;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  padding: 12px 22px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transition: all .2s linear;
+  cursor: pointer;
+}
+
+nav button img,
+.btn img{
+  transition: all .2s linear;
+}
+
+.btn:hover>img{
+  transform: translateX(6px);
+}
+
+.hero {
+  height: calc(100vh - 95px);
+  background-image: url("./assets/images/hero.png");
+  background-size: cover;
+  background-position: 50% 53%;
+  margin: 0 2vw;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 4vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #00000042;
+  left: 0;
+  top: 0;
+}
+.heroContant {
+  position: relative;
+  z-index: 3;
+  max-width: 35%;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.heroContant h1 {
+  font-size: 6vw;
+  letter-spacing: -4%;
+  line-height: 5.5rem;
+  font-weight: bold;
+}
+
+.heroContant p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 15px;
+  line-height: 150%;
+}
+
+.heroContant button {
+  padding: 16px 45px;
+  margin-top: 3rem;
+}
+
+main .sold {
+  background-color: #e8ba2e;
+  padding: 2vw 2vw 3vw 2vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .sold > div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+main .sold p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000102;
+}
+
+main .sold div > h3 {
+  font-size: 6vw;
+  font-weight: bold;
+}
+
+main .Explore {
+  /* background: red; */
+  margin: 5vw;
+  padding: 1rem;
+}
+
+main .Explore h1 {
+  font-size: 3.5rem;
+  color: #000102;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+main .Explore .ExploreCards{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+main .Explore .ExploreItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+main .Explore .ExploreItem .ExploreImg {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100vw;
+}
+
+main .Explore .ExploreItem .ExploreImg img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+main .Explore .ExploreItem .ExploreContant {
+  max-width: 60%;
+}
+
+main .Explore .ExploreItem .ExploreContant h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #000102;
+}
+
+main .Explore .ExploreItem .ExploreContant p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+  margin-bottom: 1rem;
+  color: #575757;
+}
+
+main .Explore .ExploreItem .ExploreContant ul {
+  list-style: inside;
+}
+
+main .Explore .ExploreItem .ExploreContant ul li {
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 150%;
+  color: #575757;
+}
