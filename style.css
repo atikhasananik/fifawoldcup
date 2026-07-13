@@ -27,6 +27,11 @@
   --round-md: 16px;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 html,
 body {
   height: 100%;
@@ -118,16 +123,16 @@ nav button,
   align-items: center;
   justify-content: center;
   gap: 15px;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
   cursor: pointer;
 }
 
 nav button img,
-.btn img{
-  transition: all .2s linear;
+.btn img {
+  transition: all 0.2s linear;
 }
 
-.btn:hover>img{
+.btn:hover > img {
   transform: translateX(5px);
 }
 
@@ -183,7 +188,7 @@ nav button img,
 }
 
 main .sold {
-    margin-top: 5vw;
+  margin-top: 5vw;
   background-color: #e8ba2e;
   padding: 3vw 2vw;
   display: flex;
@@ -210,7 +215,8 @@ main .sold div > h3 {
   font-weight: bold;
 }
 
-main .Explore , main .tableSection {
+main .Explore,
+main .tableSection {
   margin: 5vw 2vw;
   padding: 1rem;
 }
@@ -223,7 +229,7 @@ main .Explore h1 {
   margin-bottom: 3rem;
 }
 
-main .Explore .ExploreCards{
+main .Explore .ExploreCards {
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -279,30 +285,30 @@ main .Explore .ExploreItem .ExploreContant ul li {
   color: #575757;
 }
 
-main .Explore .ExploreBtn{
+main .Explore .ExploreBtn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main .Explore button{
+main .Explore button {
   padding: 16px 45px;
   margin-top: 3rem;
   align-self: center;
 }
 
-main .tableSection .tableHeading{
+main .tableSection .tableHeading {
   margin-bottom: 20px;
 }
 
-main .tableSection .tableHeading h2{
+main .tableSection .tableHeading h2 {
   color: #000102;
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-main .tableSection .tableHeading p{
-  color: #505F76;
+main .tableSection .tableHeading p {
+  color: #505f76;
   font-size: 1rem;
   font-weight: 400;
 }
@@ -314,55 +320,56 @@ main .tableSection .tableHeading p{
   -webkit-overflow-scrolling: touch;
 }
 
-table{
+table {
   width: 100%;
   border-collapse: collapse;
 }
-th{
+th {
   border: 1px solid #3e3e3e;
-  background-color: #A73131;
+  background-color: #a73131;
   color: white;
   font-size: 14px;
 }
 
-th, td {
-  border: 1px solid #3e3e3e; 
-  padding: 16px;          
+th,
+td {
+  border: 1px solid #3e3e3e;
+  padding: 16px;
   font-weight: 600;
 }
-td{
+td {
   font-size: 16px;
   padding-left: 20px;
 }
 
-td:nth-child(1){
+td:nth-child(1) {
   padding: 1rem;
   text-align: center;
-  color: #BA1A1A;
+  color: #ba1a1a;
 }
-td:nth-child(2){
-  color: #111C2D;
+td:nth-child(2) {
+  color: #111c2d;
 }
-td:nth-child(3){
-  color: #505F76;
+td:nth-child(3) {
+  color: #505f76;
 }
-td:nth-child(4){
-  color: #111C2D;
+td:nth-child(4) {
+  color: #111c2d;
   font-size: 12px;
 }
 
 tr:nth-child(1) td:nth-child(4) {
-  color: #F60000;
+  color: #f60000;
 }
 tr:nth-last-child(1) td:nth-child(4) {
-  color: #BDA004;
+  color: #bda004;
 }
 
 /* --- Tournament Highlights Section Styles --- */
 .tournament-highlights {
   background-color: var(--bg-light);
   padding: 60px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-dark);
 }
 
@@ -461,7 +468,10 @@ tr:nth-last-child(1) td:nth-child(4) {
 
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Decreased baseline to prevent cutoffs */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Decreased baseline to prevent cutoffs */
   gap: 30px;
 }
 
@@ -528,7 +538,7 @@ tr:nth-last-child(1) td:nth-child(4) {
 .tournament-hub {
   background-color: var(--hub-bg);
   padding: 80px 20px;
-  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-family: "Segoe UI", system-ui, sans-serif;
   color: var(--text-main);
   border-top: 1px solid var(--light-gray);
 }
@@ -578,7 +588,8 @@ tr:nth-last-child(1) td:nth-child(4) {
   text-align: center;
 }
 
-.mini-table th, .mini-table td {
+.mini-table th,
+.mini-table td {
   padding: 12px 10px;
   font-size: 0.95rem;
   border-bottom: 1px solid var(--light-gray);
@@ -591,15 +602,21 @@ tr:nth-last-child(1) td:nth-child(4) {
   text-transform: uppercase;
 }
 
-.text-left { text-align: left; }
-.font-bold { font-weight: 600; }
+.text-left {
+  text-align: left;
+}
+.font-bold {
+  font-weight: 600;
+}
 
 .qualifying-row td:first-child {
   border-left: 4px solid var(--accent-green);
 }
 
 .fan-desc {
-  color: var(--text-muted); /* Swapped from text-secondary white to readable gray */
+  color: var(
+    --text-muted
+  ); /* Swapped from text-secondary white to readable gray */
   font-size: 0.95rem;
   margin: 0 0 20px 0;
   line-height: 1.5;
@@ -627,8 +644,13 @@ tr:nth-last-child(1) td:nth-child(4) {
   gap: 8px;
 }
 
-.flag-large { font-size: 2.5rem; }
-.team-name { font-weight: 600; font-size: 1rem; }
+.flag-large {
+  font-size: 2.5rem;
+}
+.team-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
 
 .vs-badge {
   background: var(--primary-maroon);
@@ -698,10 +720,16 @@ tr:nth-last-child(1) td:nth-child(4) {
 }
 
 .site-footer {
-  background-color:#000102; 
+  background-color: #000102;
   color: #ffffff;
   padding: 60px 24px 30px 24px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
 }
 
 .footer-container {
@@ -746,7 +774,7 @@ tr:nth-last-child(1) td:nth-child(4) {
 }
 
 .social-link:hover {
-  color: #2563eb; 
+  color: #2563eb;
 }
 
 .social-link svg {
@@ -771,7 +799,6 @@ tr:nth-last-child(1) td:nth-child(4) {
   margin: 0;
 }
 
-
 /* ==========================================
    MEDIA QUERIES (RESPONSIVE ENGINE)
    ========================================== */
@@ -781,12 +808,12 @@ tr:nth-last-child(1) td:nth-child(4) {
   .heroContant {
     max-width: 70%;
   }
-  
+
   main .Explore .ExploreItem {
     flex-direction: column; /* Stacks the explore items vertically */
     gap: 1.5rem;
   }
-  
+
   main .Explore .ExploreItem .ExploreImg,
   main .Explore .ExploreItem .ExploreContant {
     width: 100%;
@@ -796,7 +823,7 @@ tr:nth-last-child(1) td:nth-child(4) {
   .hub-container {
     grid-template-columns: 1fr;
   }
-  
+
   .facts-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -875,11 +902,12 @@ tr:nth-last-child(1) td:nth-child(4) {
 
 /* Tiny Screen Support (Under 480px) */
 @media (max-width: 480px) {
-  td, th {
+  td,
+  th {
     padding: 10px 8px;
     font-size: 14px;
   }
-  
+
   .vs-teams {
     flex-direction: column;
     gap: 15px;
