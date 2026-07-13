@@ -94,7 +94,7 @@ nav button,
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   transition: all .2s linear;
   cursor: pointer;
 }
@@ -105,7 +105,7 @@ nav button img,
 }
 
 .btn:hover>img{
-  transform: translateX(6px);
+  transform: translateX(5px);
 }
 
 .hero {
@@ -183,7 +183,7 @@ main .sold div > h3 {
   font-weight: bold;
 }
 
-main .Explore {
+main .Explore , main .tableSection {
   /* background: red; */
   margin: 5vw;
   padding: 1rem;
@@ -249,4 +249,85 @@ main .Explore .ExploreItem .ExploreContant ul li {
   font-weight: bold;
   line-height: 150%;
   color: #575757;
+}
+
+
+main .Explore .ExploreBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .Explore button{
+  padding: 16px 45px;
+  margin-top: 3rem;
+  align-self: center;
+}
+
+main .tableSection{
+  
+}
+
+main .tableSection .tableHeading{
+  margin-bottom: 1vw;
+
+}
+
+main .tableSection .tableHeading h2{
+color: #000102;
+font-size: 2rem;
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+main .tableSection .tableHeading p{
+  color: #505F76;
+  font-size: 1rem;
+  font-weight: 400;
+  
+
+}
+
+table{
+  width: 100%;
+ border-collapse: collapse;
+}
+th{
+  border: 1px solid #3e3e3e;
+  background-color: #A73131;
+  color: white;
+  font-size: 14px;
+}
+
+th, td {
+  border: 1px solid #3e3e3e; 
+  padding: 16px;          
+  font-weight: 600;
+}
+td{
+  font-size: 16px;
+  padding-left: 5vw;
+
+}
+
+td:nth-child(1){
+  padding: 1rem;
+  text-align: center;
+  color: #BA1A1A;
+}
+td:nth-child(2){
+  color: #111C2D;
+}
+td:nth-child(3){
+  color: #505F76;
+}
+td:nth-child(4){
+  color: #111C2D;
+  font-size: 12px;
+}
+
+tr:nth-child(1) td:nth-child(4) {
+  color: #F60000;
+}
+tr:nth-last-child(1) td:nth-child(4) {
+  color: #BDA004;
 }
