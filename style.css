@@ -5,14 +5,37 @@
   font-family: "Host Grotesk", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+:root {
+  --bg-light: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-dark: #111111;
+  --text-muted: #666666;
+  --primary-gold: #8a1538; /* Classic tournament deep red/burgundy accent */
+  --accent-blue: #0056b3;
+  --border-color: #e9ecef;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --radius: 12px;
+  --hub-bg: #ffffff;
+  --hub-card-bg: #f8f9fa;
+  --text-main: #1a1a1a;
+  --text-secondary: #ffffff;
+  --primary-maroon: #8a1538;
+  --accent-green: #00875a;
+  --light-gray: #e5e7eb;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --round-md: 16px;
+}
+
 html,
 body {
   height: 100%;
   width: 100%;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
 }
 
 header {
-  height: 100vh;
+  min-height: 100vh; /* Changed from height to min-height to allow content to grow */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -109,15 +132,16 @@ nav button img,
 }
 
 .hero {
-  height: calc(100vh - 95px);
+  flex-grow: 1; /* Allows the hero to scale gracefully inside the header flex context */
+  min-height: 500px;
   background-image: url("./assets/images/hero.png");
   background-size: cover;
-  background-position: 50% 53%;
+  background-position: center;
   margin: 0 2vw;
   border-radius: 10px;
   display: flex;
   align-items: center;
-  padding: 0 4vw;
+  padding: 40px 4vw;
   position: relative;
   overflow: hidden;
 }
@@ -130,18 +154,19 @@ nav button img,
   left: 0;
   top: 0;
 }
+
 .heroContant {
   position: relative;
   z-index: 3;
-  max-width: 35%;
+  max-width: 45%; /* Slightly wider default baseline */
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .heroContant h1 {
-  font-size: 6vw;
+  font-size: 3.5rem; /* Dynamic font scale baseline */
   letter-spacing: -4%;
-  line-height: 5.5rem;
+  line-height: 1.1;
   font-weight: bold;
 }
 
@@ -158,18 +183,20 @@ nav button img,
 }
 
 main .sold {
+    margin-top: 5vw;
   background-color: #e8ba2e;
-  padding: 2vw 2vw 3vw 2vw;
-
+  padding: 3vw 2vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap; /* Fallback for smooth wrapping */
+  gap: 20px;
 }
 
 main .sold > div {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
 }
 
 main .sold p {
@@ -179,18 +206,17 @@ main .sold p {
 }
 
 main .sold div > h3 {
-  font-size: 6vw;
+  font-size: 3.5rem;
   font-weight: bold;
 }
 
 main .Explore , main .tableSection {
-  /* background: red; */
-  margin: 5vw;
+  margin: 5vw 2vw;
   padding: 1rem;
 }
 
 main .Explore h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   color: #000102;
   font-weight: 600;
   text-align: center;
@@ -200,7 +226,7 @@ main .Explore h1 {
 main .Explore .ExploreCards{
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 3rem;
 }
 
 main .Explore .ExploreItem {
@@ -212,21 +238,23 @@ main .Explore .ExploreItem {
 main .Explore .ExploreItem .ExploreImg {
   border-radius: 10px;
   overflow: hidden;
-  width: 100vw;
+  width: 45%; /* Fixes structural breakdown on desktop */
+  flex-shrink: 0;
 }
 
 main .Explore .ExploreItem .ExploreImg img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
 main .Explore .ExploreItem .ExploreContant {
-  max-width: 60%;
+  max-width: 50%;
 }
 
 main .Explore .ExploreItem .ExploreContant h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
   color: #000102;
@@ -251,7 +279,6 @@ main .Explore .ExploreItem .ExploreContant ul li {
   color: #575757;
 }
 
-
 main .Explore .ExploreBtn{
   display: flex;
   justify-content: center;
@@ -263,33 +290,33 @@ main .Explore button{
   align-self: center;
 }
 
-main .tableSection{
-  
-}
-
 main .tableSection .tableHeading{
-  margin-bottom: 1vw;
-
+  margin-bottom: 20px;
 }
 
 main .tableSection .tableHeading h2{
-color: #000102;
-font-size: 2rem;
-font-weight: bold;
-margin-bottom: 5px;
+  color: #000102;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 main .tableSection .tableHeading p{
   color: #505F76;
   font-size: 1rem;
   font-weight: 400;
-  
+}
 
+/* Responsive Table Wrapper */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 table{
   width: 100%;
- border-collapse: collapse;
+  border-collapse: collapse;
 }
 th{
   border: 1px solid #3e3e3e;
@@ -305,8 +332,7 @@ th, td {
 }
 td{
   font-size: 16px;
-  padding-left: 5vw;
-
+  padding-left: 20px;
 }
 
 td:nth-child(1){
@@ -330,4 +356,532 @@ tr:nth-child(1) td:nth-child(4) {
 }
 tr:nth-last-child(1) td:nth-child(4) {
   color: #BDA004;
+}
+
+/* --- Tournament Highlights Section Styles --- */
+.tournament-highlights {
+  background-color: var(--bg-light);
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+  color: var(--primary-gold);
+}
+
+.stats-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.stats-card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.player-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  background: var(--bg-light);
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.rank {
+  width: 30px;
+  color: var(--primary-gold);
+}
+
+.player-name {
+  flex-grow: 1;
+}
+
+.team-badge {
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  background: #ddd;
+  border-radius: 4px;
+  margin-right: 15px;
+  color: #333;
+}
+
+.goals {
+  color: var(--accent-blue);
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  height: 80%;
+  align-content: center;
+}
+
+.fact-item {
+  text-align: center;
+  padding: 20px 10px;
+  background: var(--bg-light);
+  border-radius: 8px;
+}
+
+.fact-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-gold);
+}
+
+.fact-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 5px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Decreased baseline to prevent cutoffs */
+  gap: 30px;
+}
+
+.news-card {
+  display: flex;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.news-img-placeholder {
+  width: 120px;
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.news-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.news-tag {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent-blue);
+  letter-spacing: 0.5px;
+}
+
+.news-content h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.news-content p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0 0 10px 0;
+}
+
+.read-more {
+  font-size: 0.9rem;
+  color: var(--primary-gold);
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+/* --- Tournament Hub Section Styles --- */
+.tournament-hub {
+  background-color: var(--hub-bg);
+  padding: 80px 20px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: var(--text-main);
+  border-top: 1px solid var(--light-gray);
+}
+
+.hub-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.hub-block {
+  background: var(--hub-card-bg);
+  border: 1px solid var(--light-gray);
+  border-radius: var(--round-md);
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.hub-header {
+  margin-bottom: 25px;
+}
+
+.hub-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--primary-maroon);
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.hub-title {
+  font-size: 1.6rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.mini-table th, .mini-table td {
+  padding: 12px 10px;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.mini-table th {
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.text-left { text-align: left; }
+.font-bold { font-weight: 600; }
+
+.qualifying-row td:first-child {
+  border-left: 4px solid var(--accent-green);
+}
+
+.fan-desc {
+  color: var(--text-muted); /* Swapped from text-secondary white to readable gray */
+  font-size: 0.95rem;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+.predictor-card {
+  background: white;
+  border: 1px solid var(--light-gray);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.vs-teams {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.team-vote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.flag-large { font-size: 2.5rem; }
+.team-name { font-weight: 600; font-size: 1rem; }
+
+.vs-badge {
+  background: var(--primary-maroon);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.poll-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.poll-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.poll-progress-bar {
+  background: var(--hub-card-bg);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.poll-progress-bar .progress {
+  background: var(--primary-maroon);
+  height: 100%;
+  border-radius: 4px;
+}
+
+.vote-btn {
+  width: 100%;
+  background: var(--primary-maroon);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.vote-btn:hover {
+  opacity: 0.9;
+}
+
+.hub-link {
+  margin-top: auto;
+  align-self: flex-start;
+  color: var(--primary-maroon);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.hub-link:hover {
+  text-decoration: underline;
+}
+
+.site-footer {
+  background-color:#000102; 
+  color: #ffffff;
+  padding: 60px 24px 30px 24px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.footer-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 32px;
+}
+
+.footer-logo {
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+}
+
+.logo-bold {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.logo-light {
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.social-link {
+  color: #ffffffbe;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.social-link:hover {
+  color: #2563eb; 
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-divider {
+  border: 0;
+  border-top: 1px solid #e2e8f07b;
+  margin: 80px 0 14px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.copyright-text {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+
+/* ==========================================
+   MEDIA QUERIES (RESPONSIVE ENGINE)
+   ========================================== */
+
+/* Tablet & Smaller Devices (Under 992px) */
+@media (max-width: 992px) {
+  .heroContant {
+    max-width: 70%;
+  }
+  
+  main .Explore .ExploreItem {
+    flex-direction: column; /* Stacks the explore items vertically */
+    gap: 1.5rem;
+  }
+  
+  main .Explore .ExploreItem .ExploreImg,
+  main .Explore .ExploreItem .ExploreContant {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hub-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .facts-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile Devices (Under 768px) */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero {
+    min-height: 400px;
+    padding: 30px;
+  }
+
+  .heroContant {
+    max-width: 100%;
+  }
+
+  .heroContant h1 {
+    font-size: 2.3rem;
+  }
+
+  .heroContant button {
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+
+  main .sold {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  main .sold div > h3 {
+    font-size: 2.8rem;
+  }
+
+  main .Explore h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  main .Explore .ExploreItem .ExploreContant h2 {
+    font-size: 1.5rem;
+  }
+
+  .news-card {
+    flex-direction: column;
+  }
+
+  .news-img-placeholder {
+    width: 100%;
+    height: 150px;
+  }
+
+  .facts-grid {
+    grid-template-columns: 1fr; /* Stacks tournament statistics cards */
+    gap: 10px;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Tiny Screen Support (Under 480px) */
+@media (max-width: 480px) {
+  td, th {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+  
+  .vs-teams {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
